@@ -10,9 +10,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-//using the routes 
-app.use(adminRoutes);
-app.use(shopRoutes);
+//using the routes with the filtering the path 
+app.use('/admin',adminRoutes);
+app.use('/shop',shopRoutes);
 
 //handling the page not found issue 
 app.use((req, res, next) => {
